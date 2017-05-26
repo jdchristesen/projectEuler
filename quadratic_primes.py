@@ -23,17 +23,18 @@ print(b_primes)
 
 consecutive_primes = 0
 final_coeff = []
-for a in range(1000):
+for a in range(-999, 1000):
     print(a)
     for b in b_primes:
-        for sign in [[1, 1], [1, -1], [-1, 1], [-1, -1]]:
+        for sign in [-1, 1]:
             i = 0
-            while is_prime(i**2 + sign[0]*a*i + sign[1]*b):
+            while is_prime(abs(i**2 + a*i + sign*b)):
                 i += 1
-            if i > consecutive_primes:
-                print('Primes: ', i)
-                consecutive_primes = i
-                final_coeff = [sign[0] * a, sign[1] * b]
+            if i-1 > consecutive_primes:
+                print('Primes: ', i-1)
+                consecutive_primes = i-1
+                final_coeff = [a, sign * b]
 
 print(consecutive_primes)
 print(final_coeff)
+print(final_coeff[0] * final_coeff[1])
