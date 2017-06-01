@@ -17,9 +17,9 @@ def is_prime(n):
 circular_primes = []
 not_circular = set()
 for x in range(500000):
-    # if ''.join(sorted(str(x))) in not_circular:
-    #     continue
-    if x not in circular_primes and is_prime(x):
+    if ('8' or '6' or '5' or '4' or '2' or '0') in str(x):
+        pass
+    elif x not in circular_primes and is_prime(x):
         circular_bool = True
         circular = x
         for i in range(len(str(circular))):
