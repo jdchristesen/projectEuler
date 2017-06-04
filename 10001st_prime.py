@@ -18,7 +18,7 @@ def is_prime(n):
 primes = []
 current_number = 0
 
-while len(primes) < 10001:
+while len(primes) < 10**4+1:
     current_number += 1
 
     if is_prime(current_number):
