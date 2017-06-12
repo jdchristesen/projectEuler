@@ -4,7 +4,8 @@ def find_combinations(amount, values):
     elif len(values) < 1 or amount < 1:
         return 0
     else:
-        return find_combinations(amount, values[:-1]) + find_combinations(amount - values[-1], values)
+        return find_combinations(amount, values[:-1]) \
+               + find_combinations(amount - values[-1], values)
 
 
 def coin_dp(amount, values):
